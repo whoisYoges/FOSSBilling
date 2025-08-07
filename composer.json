@@ -61,20 +61,32 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.8",
+        "pestphp/pest": "^2.34",
         "phpstan/phpstan": "^2.0",
         "phpstan/extension-installer": "^1.2",
         "phpstan/phpstan-deprecation-rules": "^2.0",
-        "phpunit/phpunit": "^11.4.3",
+        "phpunit/phpunit": "^10.5",
         "rector/rector": "^2.0.0",
         "symfony/deprecation-contracts": "^3.0.0",
         "symfony/phpunit-bridge": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FOSSBilling\\": "src/library/FOSSBilling"
+        },
+        "classmap": [
+            "src/modules",
+            "src/library/Box",
+            "src/library/Model"
+        ]
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
             "phpstan/extension-installer": true,
             "php-http/discovery": true,
-            "liborm85/composer-vendor-cleaner": true
+            "liborm85/composer-vendor-cleaner": true,
+            "pestphp/pest-plugin": true
         },
         "vendor-dir": "src/vendor"
     },
